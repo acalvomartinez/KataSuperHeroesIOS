@@ -31,5 +31,19 @@ class SuperHeroesRepository {
         }
     }
     
+    func getDetail(id: String, _ completion: @escaping (SuperHero) -> ()) {
+        let charactersAPIClient = MarvelAPIClient.charactersAPIClient
+        
+        charactersAPIClient.getById(id: id) { (result) in
+            let character = result.value.map {
+                SuperHero(id: $0.id,
+                          name: $0.name ?? "",
+                          photo: $0.thumbnail?.URL(variant: .portraitUncanny) as URL?,
+                          isAvenger: false,
+                          description: $0.description ?? "")
+            }
+           completion(character!)
+        }
+    }
     
 }

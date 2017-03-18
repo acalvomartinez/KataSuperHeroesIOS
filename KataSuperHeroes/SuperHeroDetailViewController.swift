@@ -11,7 +11,7 @@ import UIKit
 import BothamUI
 import SDWebImage
 
-class SuperHeroDetailViewController: KataSuperHeroesViewController {
+class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroUI {
 
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
@@ -32,4 +32,8 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController {
         photoImageView.sd_setImage(with: superHero.photo as URL!)
         avengersBadgeImageView.isHidden = !superHero.isAvenger
     }
+}
+
+protocol SuperHeroUI: class {
+    func show(superHero: SuperHero?)
 }

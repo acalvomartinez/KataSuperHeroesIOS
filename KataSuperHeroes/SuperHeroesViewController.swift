@@ -10,7 +10,7 @@ import UIKit
 import BothamUI
 import MarvelAPIClient
 
-class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
+class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!
@@ -20,7 +20,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
 
     override func viewDidLoad() {
         tableView.dataSource = dataSource
-        tableView.delegate = delegate
+        tableView.delegate = self
         tableView.tableFooterView = UIView()
         tableView.accessibilityLabel = "SuperHeroesTableView"
         tableView.accessibilityIdentifier = "SuperHeroesTableView"
@@ -38,6 +38,10 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
 
     fileprivate func configureNavigationBarBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 }
 

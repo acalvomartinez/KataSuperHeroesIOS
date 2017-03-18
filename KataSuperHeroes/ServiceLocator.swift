@@ -22,7 +22,8 @@ class ServiceLocator {
         let superHeroesViewController: SuperHeroesViewController =
         storyBoard.instantiateViewController("SuperHeroesViewController")
         let repository = SuperHeroesRepository()
-        let presenter = SuperHeroesPresenter(ui: superHeroesViewController,getSuperHeroes: GetSuperHeroes(repository: repository))
+        let presenter = SuperHeroesPresenter(ui: superHeroesViewController,
+                                             getSuperHeroes: GetSuperHeroes(repository: repository))
         
         let dataSource = provideSuperHeroesDataSource()
         superHeroesViewController.presenter = presenter
@@ -32,10 +33,12 @@ class ServiceLocator {
         return superHeroesViewController
     }
 
-    func provideSuperHeroDetailViewController(_ superHeroName: String) -> UIViewController {
+    func provideSuperHeroDetailViewController(_ superHeroId: String) -> UIViewController {
         let viewController: SuperHeroDetailViewController =
         storyBoard.instantiateViewController("SuperHeroDetailViewController")
-        viewController.presenter = SuperHeroDetailPresenter()
+        let repository = SuperHeroesRepository()
+        let presenter = SuperHeroDetailPresenter(superHeroId: superHeroId, ui: viewController, getSuperHeroDetail: GetSuperHeroDetail(repository: repository))
+        viewController.presenter = presenter
         return viewController
     }
 
