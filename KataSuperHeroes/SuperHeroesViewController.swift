@@ -29,16 +29,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        MarvelAPIClient.configureCredentials(
-            publicKey: "bf1f5d5f088f59478a3f68324fd1face",
-            privateKey: "d3fa0b1bad53d48b8bac7b9d4a02a860d24caca0")
-
-        let charactersAPIClient = MarvelAPIClient.charactersAPIClient
-        charactersAPIClient.getAll(offset: 0, limit: 10) { response in
-            print("Get characters by offset and limit:")
-            let characters = response.value?.characters
-            print(characters?[0].name ?? "")
-        }
+        
     }
 
     func showEmptyCase() {
