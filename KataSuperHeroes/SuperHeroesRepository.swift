@@ -21,7 +21,8 @@ class SuperHeroesRepository {
         
         charactersAPIClient.getAll(offset: 0, limit: 50) { response in
             let characters = response.value?.characters?.map {
-                SuperHero(name: $0.name ?? "",
+                SuperHero(id: $0.id,
+                          name: $0.name ?? "",
                           photo: $0.thumbnail?.URL(variant: .portraitUncanny) as URL?,
                           isAvenger: false,
                           description: $0.description ?? "")

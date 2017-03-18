@@ -9,7 +9,8 @@
 import Foundation
 
 struct SuperHero {
-
+    
+    let id: String
     let name: String
     let photo: URL?
     let isAvenger: Bool
