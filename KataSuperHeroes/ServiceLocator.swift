@@ -21,9 +21,9 @@ class ServiceLocator {
     func provideSuperHeroesViewController() -> UIViewController {
         let superHeroesViewController: SuperHeroesViewController =
         storyBoard.instantiateViewController("SuperHeroesViewController")
-        let repository = SuperHeroesRepository()
+        let richModel = SuperHeroesRichModel(repository: SuperHeroesRepository())
         let presenter = SuperHeroesPresenter(ui: superHeroesViewController,
-                                             getSuperHeroes: GetSuperHeroes(repository: repository))
+                                             getSuperHeroes: GetSuperHeroes(richModel: richModel))
         
         let dataSource = provideSuperHeroesDataSource()
         superHeroesViewController.presenter = presenter

@@ -19,8 +19,15 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
     
     func viewDidLoad() {
-        getSuperHeroes.execute { (superHeroes) in
+        getSuperHeroes.execute { result in
             DispatchQueue.main.async {
+                if let error = result.error {
+                    self.ui?.showError(error)
+                    return
+                }
+                
+                let superHeroes = result.value!
+                
                 if superHeroes.count > 0 {
                     self.ui?.show(items: superHeroes)
                 } else {

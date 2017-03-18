@@ -10,7 +10,7 @@ import UIKit
 import BothamUI
 import MarvelAPIClient
 
-class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI, UITableViewDelegate {
+class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!
@@ -20,7 +20,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
 
     override func viewDidLoad() {
         tableView.dataSource = dataSource
-        tableView.delegate = self
+        tableView.delegate = delegate
         tableView.tableFooterView = UIView()
         tableView.accessibilityLabel = "SuperHeroesTableView"
         tableView.accessibilityIdentifier = "SuperHeroesTableView"
@@ -31,6 +31,10 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     func showEmptyCase() {
         emptyCaseView.isHidden = false
     }
+    
+    func showError(_ error: SuperHeroesError) {
+        print(error)
+    }
 
     func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController) {
         navigationController?.push(viewController: superHeroDetailViewController)
@@ -39,15 +43,10 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     fileprivate func configureNavigationBarBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let superHero = self.dataSource.items[indexPath.item]
-        
-        print(superHero)
-    }
 }
 
 protocol SuperHeroesUI: class {
     func showEmptyCase()
     func show(items: [SuperHero])
+    func showError(_ error: SuperHeroesError)
 }

@@ -8,6 +8,12 @@
 
 import Foundation
 import MarvelAPIClient
+import Result
+
+enum SuperHeroesError: Error {
+    case networkError
+    case invalidSession
+}
 
 class SuperHeroesRepository {
     init() {
@@ -16,10 +22,20 @@ class SuperHeroesRepository {
             privateKey: "d3fa0b1bad53d48b8bac7b9d4a02a860d24caca0")
     }
     
-    func getAll(_ completion: @escaping ([SuperHero]) -> ()) {
+    func getAll(_ completion: @escaping (Result<[SuperHero], SuperHeroesError>) -> ()) {
         let charactersAPIClient = MarvelAPIClient.charactersAPIClient
         
         charactersAPIClient.getAll(offset: 0, limit: 50) { response in
+            if let error = response.error {
+                switch error {
+                case .networkError:
+                    completion(Result(error: .networkError))
+                default:
+                    completion(Result(error: .invalidSession))
+                }
+                return
+            }
+            
             let characters = response.value?.characters?.map {
                 SuperHero(id: $0.id,
                           name: $0.name ?? "",
@@ -27,7 +43,7 @@ class SuperHeroesRepository {
                           isAvenger: false,
                           description: $0.description ?? "")
             }
-            completion(characters!)
+            completion(Result(value: characters!))
         }
     }
     

@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import Result
 
 class GetSuperHeroes {
     
-    fileprivate let repository: SuperHeroesRepository
+    fileprivate let richModel: SuperHeroesRichModel
     
-    init(repository: SuperHeroesRepository) {
-        self.repository = repository
+    init(richModel: SuperHeroesRichModel) {
+        self.richModel = richModel
     }
     
-    func execute(_ completion: @escaping ([SuperHero]) -> ()) {
-        repository.getAll() { superHeroes in
-            completion(superHeroes)
+    func execute(_ completion: @escaping (Result<[SuperHero], SuperHeroesError>) -> ()) {
+        richModel.getAll() { result in
+            completion(result)
         }
     }
 }

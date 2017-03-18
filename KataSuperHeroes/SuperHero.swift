@@ -16,4 +16,11 @@ struct SuperHero {
     let isAvenger: Bool
     let description: String
 
+    func withIsAvenger(isAvenger: Bool) -> SuperHero {
+        return SuperHero(id: id,
+                         name: name,
+                         photo: photo,
+                         isAvenger: isAvenger,
+                         description: description)
+    }
 }
