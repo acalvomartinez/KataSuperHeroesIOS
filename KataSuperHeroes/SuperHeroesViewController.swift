@@ -41,7 +41,9 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let superHero = self.dataSource.items[indexPath.item]
         
+        print(superHero)
     }
 }
 
