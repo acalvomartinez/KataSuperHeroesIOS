@@ -23,8 +23,9 @@ class SuperHeroesRichModel {
                 return
             }
             
-            let superHeroes = result.value?.enumerated().map { (index, element) in
-                return element.withIsAvenger(isAvenger: (index % 3) == 0)
+            let superHeroes = result.value?.enumerated().map { (index, element) -> SuperHero in
+                let isAvenger = (index % 3) == 0
+                return element.withIsAvenger(isAvenger: isAvenger)
             }
             
             completion(Result(value: superHeroes!))

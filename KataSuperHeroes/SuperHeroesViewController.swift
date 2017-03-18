@@ -49,4 +49,5 @@ protocol SuperHeroesUI: class {
     func showEmptyCase()
     func show(items: [SuperHero])
     func showError(_ error: SuperHeroesError)
+    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController)
 }
