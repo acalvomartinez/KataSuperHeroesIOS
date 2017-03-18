@@ -10,7 +10,7 @@ import UIKit
 import BothamUI
 import MarvelAPIClient
 
-class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController {
+class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!
@@ -28,10 +28,6 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-
     func showEmptyCase() {
         emptyCaseView.isHidden = false
     }
@@ -43,4 +39,9 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     fileprivate func configureNavigationBarBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
+}
+
+protocol SuperHeroesUI: class {
+    func showEmptyCase()
+    func show(items: [SuperHero])
 }
