@@ -28,9 +28,10 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroUI 
         userLabel.isHidden = false
         descriptionLabel.text = superHero.description
         descriptionLabel.accessibilityLabel = "Description: \(superHero.name)"
-        descriptionLabel.isHidden = false
+        descriptionLabel.isHidden = superHero.description == ""
         photoImageView.sd_setImage(with: superHero.photo as URL!)
         avengersBadgeImageView.isHidden = !superHero.isAvenger
+        title = superHero.name
     }
 }
 

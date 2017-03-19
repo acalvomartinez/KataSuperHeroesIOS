@@ -27,20 +27,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuperHeroTableViewCellIdentifier" rowHeight="163" id="oeV-Gk-mce" customClass="SuperHeroTableViewCell" customModule="KataSuperHeroes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="163"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oeV-Gk-mce" id="qqq-ei-lKA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAL-V2-PGp" userLabel="Photo Image View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
                                                     <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Avengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-zD-xEt">
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-Px-Hnl" userLabel="Avengers Badge Image VIew">
-                                                    <rect key="frame" x="520" y="75" width="64" height="72"/>
+                                                    <rect key="frame" x="295" y="75" width="64" height="72"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
@@ -75,8 +75,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="¯\_(ツ)_/¯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOF-w6-oKO">
-                                <rect key="frame" x="265" y="290" width="70.5" height="20.5"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¯\_(ツ)_/¯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOF-w6-oKO">
+                                <rect key="frame" x="152" y="323.5" width="71" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="¯\_(ツ)_/¯"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,45 +114,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd7-4D-rrH" userLabel="Photo Image View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="163"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhK-kS-IbB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd7-4D-rrH" userLabel="Photo Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
+                                        <rect key="frame" x="291" y="484.5" width="64" height="72"/>
+                                        <accessibility key="accessibilityConfiguration" label="Avengers Badge">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="cI7-ej-w94"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bd7-4D-rrH" secondAttribute="trailing" id="EMx-l6-Kc0"/>
+                                    <constraint firstAttribute="trailing" secondItem="wb6-lp-hqh" secondAttribute="trailing" constant="20" id="Oe5-oN-QBe"/>
+                                    <constraint firstItem="Bd7-4D-rrH" firstAttribute="leading" secondItem="hhK-kS-IbB" secondAttribute="leading" id="PKy-D0-hcf"/>
+                                    <constraint firstItem="Bd7-4D-rrH" firstAttribute="top" secondItem="hhK-kS-IbB" secondAttribute="top" id="aJ1-eJ-1pT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bd7-4D-rrH" secondAttribute="bottom" id="vuL-vd-dOP"/>
                                 </constraints>
-                            </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
-                                <rect key="frame" x="24" y="233" width="327" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
-                                <rect key="frame" x="24" y="261" width="327" height="398"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
-                                <rect key="frame" x="303" y="111" width="64" height="72"/>
-                                <accessibility key="accessibilityConfiguration" label="Avengers Badge">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                            </imageView>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJh-8b-ua3">
+                                <rect key="frame" x="0.0" y="576" width="375" height="90.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qwa-RO-Wqk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Tq-qa-RoG">
+                                <rect key="frame" x="20" y="596.5" width="335" height="50.5"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
+                                        <rect key="frame" x="0.0" y="30.5" width="335" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="KvJ-eH-mPl" secondAttribute="trailing" constant="8" id="Cgd-Lm-PnN"/>
-                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="top" secondItem="QYG-mz-kqV" secondAttribute="bottom" id="LoZ-Ax-I8k"/>
-                            <constraint firstItem="KvJ-eH-mPl" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="OAK-kX-YE8"/>
-                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="width" secondItem="AEF-qs-Gl8" secondAttribute="width" id="R9B-4J-pgU"/>
-                            <constraint firstItem="KvJ-eH-mPl" firstAttribute="top" secondItem="9cs-Na-XQN" secondAttribute="bottom" constant="8" id="VfX-XJ-dSt"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="KvJ-eH-mPl" secondAttribute="bottom" constant="8" id="Vlm-MH-Kjf"/>
-                            <constraint firstItem="wb6-lp-hqh" firstAttribute="bottom" secondItem="Bd7-4D-rrH" secondAttribute="bottom" id="WkC-UO-iro"/>
-                            <constraint firstItem="9cs-Na-XQN" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="e1S-ar-ThG"/>
-                            <constraint firstItem="wb6-lp-hqh" firstAttribute="trailing" secondItem="Bd7-4D-rrH" secondAttribute="trailing" constant="-8" id="esJ-5m-JmD"/>
-                            <constraint firstItem="9cs-Na-XQN" firstAttribute="top" secondItem="Bd7-4D-rrH" secondAttribute="bottom" constant="50" id="ntQ-Gf-gVa"/>
-                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="centerX" secondItem="AEF-qs-Gl8" secondAttribute="centerX" id="vhw-zG-YoH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9cs-Na-XQN" secondAttribute="trailing" constant="8" id="xgh-x3-Air"/>
+                            <constraint firstItem="7Tq-qa-RoG" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leading" constant="20" id="6Vn-n2-y9z"/>
+                            <constraint firstItem="hhK-kS-IbB" firstAttribute="top" secondItem="AEF-qs-Gl8" secondAttribute="top" id="DdK-NR-YHS"/>
+                            <constraint firstAttribute="trailing" secondItem="TJh-8b-ua3" secondAttribute="trailing" id="FHd-X1-cNr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="TJh-8b-ua3" secondAttribute="bottom" id="GBR-QA-ErJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="7Tq-qa-RoG" secondAttribute="bottom" constant="20" id="OHu-z5-NF0"/>
+                            <constraint firstAttribute="trailing" secondItem="7Tq-qa-RoG" secondAttribute="trailing" constant="20" id="Q9F-Ke-3l9"/>
+                            <constraint firstItem="TJh-8b-ua3" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leading" id="RsY-g4-Gz0"/>
+                            <constraint firstItem="TJh-8b-ua3" firstAttribute="top" secondItem="7Tq-qa-RoG" secondAttribute="top" constant="-20" id="STZ-dg-gjb"/>
+                            <constraint firstItem="TJh-8b-ua3" firstAttribute="top" secondItem="wb6-lp-hqh" secondAttribute="bottom" constant="20" id="jNh-v5-Tba"/>
+                            <constraint firstItem="hhK-kS-IbB" firstAttribute="height" secondItem="AEF-qs-Gl8" secondAttribute="height" id="jXg-dU-Ip2"/>
+                            <constraint firstAttribute="trailing" secondItem="hhK-kS-IbB" secondAttribute="trailing" id="sjE-Kq-dyf"/>
+                            <constraint firstItem="hhK-kS-IbB" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leading" id="vgq-97-Gjv"/>
                         </constraints>
                     </view>
                     <connections>
