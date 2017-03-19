@@ -31,7 +31,7 @@ class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
             return
         }
         let gradient: CAGradientLayer = CAGradientLayer(layer: thumbnailImage.layer)
-        gradient.frame = thumbnailImage.bounds
+        gradient.frame = self.bounds
         gradient.colors = [UIColor.gradientStartColor.cgColor, UIColor.gradientEndColor.cgColor]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.6)
         gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
