@@ -34,6 +34,6 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroUI 
     }
 }
 
-protocol SuperHeroUI: class {
+protocol SuperHeroUI: BothamUI, BothamLoadingUI {
     func show(superHero: SuperHero?)
 }

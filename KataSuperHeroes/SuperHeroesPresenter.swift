@@ -19,8 +19,11 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
     
     func viewDidLoad() {
+        ui?.showLoader()
+        
         getSuperHeroes.execute { result in
             DispatchQueue.main.async {
+                self.ui?.hideLoader()
                 if let error = result.error {
                     self.ui?.showError(error)
                     return
@@ -28,10 +31,10 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
                 
                 let superHeroes = result.value!
                 
-                if superHeroes.count > 0 {
-                    self.ui?.show(items: superHeroes)
-                } else {
+                if superHeroes.isEmpty {
                     self.ui?.showEmptyCase()
+                } else {
+                    self.ui?.show(items: superHeroes)
                 }
             }
         }

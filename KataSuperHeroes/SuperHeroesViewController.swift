@@ -45,7 +45,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 }
 
-protocol SuperHeroesUI: class {
+protocol SuperHeroesUI: BothamUI, BothamLoadingUI  {
     func showEmptyCase()
     func show(items: [SuperHero])
     func showError(_ error: SuperHeroesError)

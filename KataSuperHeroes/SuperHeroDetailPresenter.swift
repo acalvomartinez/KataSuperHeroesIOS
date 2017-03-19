@@ -22,8 +22,10 @@ class SuperHeroDetailPresenter: BothamPresenter {
     }
     
     func viewDidLoad() {
+        ui?.showLoader()
         getSuperHeroDetail.execute(id: superHeroId) { (superHero) in
             DispatchQueue.main.async {
+                self.ui?.hideLoader()
                 self.ui?.show(superHero: superHero)
             }
         }
