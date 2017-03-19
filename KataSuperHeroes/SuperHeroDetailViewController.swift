@@ -31,11 +31,11 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroUI 
         descriptionLabel.isHidden = superHero.description == ""
         photoImageView.sd_setImage(with: superHero.photo as URL!)
         avengersBadgeImageView.isHidden = !superHero.isAvenger
-        title = superHero.name
     }
 }
 
 protocol SuperHeroUI: BothamUI, BothamLoadingUI {
     func show(superHero: SuperHero?)
     func showError(_ error: SuperHeroesError)
+    var title: String? { get set }
 }
