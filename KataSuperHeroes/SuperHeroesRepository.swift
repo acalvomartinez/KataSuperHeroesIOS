@@ -13,6 +13,7 @@ import Result
 enum SuperHeroesError: Error {
     case networkError
     case invalidSession
+    case unknown
 }
 
 class SuperHeroesRepository {
@@ -56,7 +57,7 @@ class SuperHeroesRepository {
                 case .networkError:
                     completion(Result(error: .networkError))
                 default:
-                    completion(Result(error: .invalidSession))
+                    completion(Result(error: .unknown))
                 }
                 return
             }
