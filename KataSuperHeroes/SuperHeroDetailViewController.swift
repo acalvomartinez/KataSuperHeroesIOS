@@ -37,4 +37,5 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroUI 
 
 protocol SuperHeroUI: BothamUI, BothamLoadingUI {
     func show(superHero: SuperHero?)
+    func showError(_ error: SuperHeroesError)
 }

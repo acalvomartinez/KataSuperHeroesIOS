@@ -12,20 +12,29 @@ import BothamUI
 
 class SuperHeroDetailPresenter: BothamPresenter {
     fileprivate let superHeroId: String
+    fileprivate let isAvenger: Bool
     fileprivate let getSuperHeroDetail: GetSuperHeroDetail
     fileprivate weak var ui: SuperHeroUI?
     
-    init(superHeroId: String, ui: SuperHeroUI, getSuperHeroDetail: GetSuperHeroDetail) {
+    init(superHeroId: String, ui: SuperHeroUI, isAvenger: Bool, getSuperHeroDetail: GetSuperHeroDetail) {
         self.superHeroId = superHeroId
+        self.isAvenger = isAvenger
         self.ui = ui
         self.getSuperHeroDetail = getSuperHeroDetail
     }
     
     func viewDidLoad() {
         ui?.showLoader()
-        getSuperHeroDetail.execute(id: superHeroId) { (superHero) in
+        getSuperHeroDetail.execute(id: superHeroId, isAvenger: isAvenger) { (result) in
             DispatchQueue.main.async {
                 self.ui?.hideLoader()
+                if let error = result.error {
+                    self.ui?.showError(error)
+                    return
+                }
+                
+                let superHero = result.value
+                
                 self.ui?.show(superHero: superHero)
             }
         }

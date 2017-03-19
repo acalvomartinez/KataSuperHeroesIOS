@@ -16,5 +16,9 @@ class KataSuperHeroesViewController: BothamViewController, BothamLoadingViewCont
         loadingView.color = UIColor.loadingColor
         return loadingView
     }()
+    
+    func showError(_ error: SuperHeroesError) {
+        print(error)
+    }
 
 }

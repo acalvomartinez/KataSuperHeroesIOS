@@ -47,18 +47,28 @@ class SuperHeroesRepository {
         }
     }
     
-    func getDetail(id: String, _ completion: @escaping (SuperHero) -> ()) {
+    func getDetail(id: String, _ completion: @escaping (Result<SuperHero, SuperHeroesError>) -> ()) {
         let charactersAPIClient = MarvelAPIClient.charactersAPIClient
         
-        charactersAPIClient.getById(id: id) { (result) in
-            let character = result.value.map {
+        charactersAPIClient.getById(id: id) { (response) in
+            if let error = response.error {
+                switch error {
+                case .networkError:
+                    completion(Result(error: .networkError))
+                default:
+                    completion(Result(error: .invalidSession))
+                }
+                return
+            }
+            
+            let character = response.value.map {
                 SuperHero(id: $0.id,
                           name: $0.name ?? "",
                           photo: $0.thumbnail?.URL(variant: .portraitUncanny) as URL?,
                           isAvenger: false,
                           description: $0.description ?? "")
             }
-           completion(character!)
+           completion(Result(value: character!))
         }
     }
     

@@ -41,7 +41,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
 
     func itemWasTapped(_ item: SuperHero) {
-        let superHeroDetailViewController = ServiceLocator().provideSuperHeroDetailViewController(item.id)
+        let superHeroDetailViewController = ServiceLocator().provideSuperHeroDetailViewController(item.id, isAvenger: item.isAvenger)
         
         self.ui?.openSuperHeroDetailScreen(superHeroDetailViewController)
     }

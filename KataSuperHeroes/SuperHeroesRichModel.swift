@@ -31,4 +31,23 @@ class SuperHeroesRichModel {
             completion(Result(value: superHeroes!))
         }
     }
+    
+    func getDetail(id: String, isAvenger: Bool, _ completion: @escaping (Result<SuperHero, SuperHeroesError>) -> ()) {
+        repository.getDetail(id: id) { (result) in
+            if let error = result.error {
+                completion(Result(error: error))
+                return
+            }
+            
+            let superHero = result.value.map {
+                SuperHero(id: $0.id,
+                          name: $0.name,
+                          photo: $0.photo,
+                          isAvenger: isAvenger,
+                          description: $0.description)
+            }
+            
+            completion(Result(value: superHero!))
+        }
+    }
 }
