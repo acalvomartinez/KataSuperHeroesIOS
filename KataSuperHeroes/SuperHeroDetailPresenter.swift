@@ -33,9 +33,12 @@ class SuperHeroDetailPresenter: BothamPresenter {
                     return
                 }
                 
-                let superHero = result.value
-                
-                self.ui?.show(superHero: superHero)
+                if let superHero = result.value {
+                    self.ui?.title = superHero.name
+                    self.ui?.show(superHero: superHero)
+                } else {
+                    self.ui?.showError(.unknown)
+                }
             }
         }
     }
