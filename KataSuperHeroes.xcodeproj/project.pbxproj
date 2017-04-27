@@ -319,10 +319,12 @@
 				TargetAttributes = {
 					EBC230701C45016A007D5068 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2HZ94W43L6;
 						LastSwiftMigration = 0810;
 					};
 					EBC230841C45016A007D5068 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2HZ94W43L6;
 						LastSwiftMigration = 0810;
 						TestTargetID = EBC230701C45016A007D5068;
 					};
@@ -615,6 +617,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HZ94W43L6;
 				INFOPLIST_FILE = KataSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.katasuperheroes;
@@ -629,6 +632,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HZ94W43L6;
 				INFOPLIST_FILE = KataSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.katasuperheroes;
@@ -643,6 +647,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2HZ94W43L6;
 				INFOPLIST_FILE = KataSuperHeroesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataSuperHeroesTests;
@@ -658,6 +663,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2HZ94W43L6;
 				INFOPLIST_FILE = KataSuperHeroesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataSuperHeroesTests;
