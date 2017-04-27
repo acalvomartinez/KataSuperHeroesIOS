@@ -71,6 +71,17 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
             _ = tester().waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
+    
+    func testShowsDetailsWhenTapOnTheSecondRow() {
+        let superHeroes = givenThereAreSomeSuperHeroes(5, avengers: true)
+        
+        openSuperHeroesViewController()
+
+        tester().tapRow(at: IndexPath.init(row: 1, section: 0), inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
+        tester().waitForView(withAccessibilityLabel: superHeroes[1].name)
+    }
+    
+    // MARK: - Helpers
 
     fileprivate func givenThereAreNoSuperHeroes() {
         _ = givenThereAreSomeSuperHeroes(0)
