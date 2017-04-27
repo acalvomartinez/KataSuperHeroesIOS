@@ -42,13 +42,33 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         tester().waitForView(withAccessibilityLabel: superHeroes[0].name)
     }
     
-    func testShows10SuperHeroesNamesIfThereAre10SuperHeroes() {
-        let superHeroes = givenThereAreSomeSuperHeroes(10)
+    func testShowsSomeSuperHeroesNamesIfThereAreSomeSuperHeroes() {
+        let superHeroes = givenThereAreSomeSuperHeroes(5)
         
         openSuperHeroesViewController()
         
         for i in 0..<superHeroes.count {
             tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
+        }
+    }
+    
+    func testShowsNoneBadgesIfAllSuperHeroesAreNotAvengers() {
+        let superHeroes = givenThereAreSomeSuperHeroes(5, avengers: false)
+        
+        openSuperHeroesViewController()
+        
+        for i in 0..<superHeroes.count {
+            _ = tester().waitForAbsenceOfView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
+        }
+    }
+    
+    func testShowsBadgesIfAllSuperHeroesAreAvengers() {
+        let superHeroes = givenThereAreSomeSuperHeroes(5, avengers: true)
+        
+        openSuperHeroesViewController()
+        
+        for i in 0..<superHeroes.count {
+            _ = tester().waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
 
