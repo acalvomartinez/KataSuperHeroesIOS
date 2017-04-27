@@ -32,6 +32,22 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
         assertSuperHeroExpectedValues(name: superHero.name)
     }
     
+    func testShowsSuperHeroBadgeIfSuperHeroIsAnAvenger() {
+        let superHero = givenASuperHeroWithName(isAvenger: true)
+        
+        openSuperHeroDetailViewController(superHeroName: superHero.name)
+        
+        tester().waitForView(withAccessibilityLabel: "Avenger Badge")
+    }
+    
+    func testShowsNoneSuperHeroBadgeIfSuperHeroIsNOtAnAvenger() {
+        let superHero = givenASuperHeroWithName(isAvenger: false)
+        
+        openSuperHeroDetailViewController(superHeroName: superHero.name)
+        
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "Avenger Badge")
+    }
+    
     // MARK: - Helpers
     
     fileprivate func assertSuperHeroExpectedValues(name: String) {

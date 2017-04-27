@@ -31,5 +31,6 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDet
         descriptionLabel.isHidden = false
         photoImageView.sd_setImage(with: superHero.photo as URL!)
         avengersBadgeImageView.isHidden = !superHero.isAvenger
+        avengersBadgeImageView.accessibilityLabel = "Avenger Badge"
     }
 }
