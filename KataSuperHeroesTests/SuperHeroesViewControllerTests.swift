@@ -34,13 +34,15 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         tester().waitForAbsenceOfView(withAccessibilityLabel: emptyCaseText)
     }
     
-    func testShowsSuperHeroNameIfThereISOneSuperHero() {
-        _ = givenThereAreSomeSuperHeroes(1)
+    func testShowsSuperHeroNameIfThereIsASuperHero() {
+        let superHeroes = givenThereAreSomeSuperHeroes(1)
         
         openSuperHeroesViewController()
         
-        tester().waitForView(withAccessibilityLabel: "SuperHero - 0")
+        tester().waitForView(withAccessibilityLabel: superHeroes[0].name)
     }
+    
+    
 
     fileprivate func givenThereAreNoSuperHeroes() {
         _ = givenThereAreSomeSuperHeroes(0)
