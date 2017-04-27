@@ -15,13 +15,15 @@ import UIKit
 class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
     fileprivate let repository = MockSuperHeroesRepository()
+    
+    fileprivate let emptyCaseText = "¯\\_(ツ)_/¯"
 
     func testShowsEmptyCaseIfThereAreNoSuperHeroes() {
         givenThereAreNoSuperHeroes()
 
         openSuperHeroesViewController()
 
-        tester().waitForView(withAccessibilityLabel: "¯\\_(ツ)_/¯")
+        tester().waitForView(withAccessibilityLabel: emptyCaseText)
     }
     
     func testNotShowsEmptyCaseItThereAreSuperHeroes() {
@@ -29,7 +31,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         
         openSuperHeroesViewController()
         
-        tester().waitForAbsenceOfView(withAccessibilityLabel: "¯\\_(ツ)_/¯")
+        tester().waitForAbsenceOfView(withAccessibilityLabel: emptyCaseText)
     }
 
     fileprivate func givenThereAreNoSuperHeroes() {
