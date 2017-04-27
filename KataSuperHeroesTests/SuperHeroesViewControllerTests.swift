@@ -72,12 +72,14 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         }
     }
     
-    func testShowsDetailsWhenTapOnTheSecondRow() {
+    func testOpenDetailWhenTapOnAnyRow() {
         let superHeroes = givenThereAreSomeSuperHeroes(5, avengers: true)
         
         openSuperHeroesViewController()
-
+        
+        tester().waitForView(withAccessibilityLabel: superHeroes[1].name)
         tester().tapRow(at: IndexPath.init(row: 1, section: 0), inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
+        // test uilabel navigation bar
         tester().waitForView(withAccessibilityLabel: superHeroes[1].name)
     }
     
