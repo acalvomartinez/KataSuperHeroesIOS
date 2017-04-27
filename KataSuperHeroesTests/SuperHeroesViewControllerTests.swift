@@ -42,7 +42,15 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         tester().waitForView(withAccessibilityLabel: superHeroes[0].name)
     }
     
-    
+    func testShows10SuperHeroesNamesIfThereAre10SuperHeroes() {
+        let superHeroes = givenThereAreSomeSuperHeroes(10)
+        
+        openSuperHeroesViewController()
+        
+        for i in 0..<superHeroes.count {
+            tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
+        }
+    }
 
     fileprivate func givenThereAreNoSuperHeroes() {
         _ = givenThereAreSomeSuperHeroes(0)
