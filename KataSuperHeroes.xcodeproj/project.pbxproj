@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EF423110536FA1BE9F3D026 /* Pods_KataSuperHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */; };
 		E2C4B65E1EB24F060020CAD7 /* SuperHeroDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C4B65D1EB24F060020CAD7 /* SuperHeroDetailViewControllerTests.swift */; };
+		E2C4B6621EB259070020CAD7 /* SuperHeroesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C4B6611EB259070020CAD7 /* SuperHeroesError.swift */; };
 		EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8705FE1C46508E00B66C19 /* XCTestCase.swift */; };
 		EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706001C46510300B66C19 /* KIFTestActor.swift */; };
 		EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */; };
@@ -52,6 +53,7 @@
 		91340F19D0D930E9F02F1DEA /* Pods-KataSuperHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		981F37EA85F06E461D7BE716 /* Pods-KataSuperHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		E2C4B65D1EB24F060020CAD7 /* SuperHeroDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		E2C4B6611EB259070020CAD7 /* SuperHeroesError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesError.swift; sourceTree = "<group>"; };
 		EB8705FE1C46508E00B66C19 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
 		EB8706001C46510300B66C19 /* KIFTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
 		EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewControllerTests.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				EBDE9B801C451CAF00E4B4C2 /* UseCase */,
 				EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */,
 				EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */,
+				E2C4B6611EB259070020CAD7 /* SuperHeroesError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			files = (
 				EBDE9B841C451CE500E4B4C2 /* SuperHeroesPresenter.swift in Sources */,
 				EBDB2D0B1C456129001FC84B /* SuperHeroDetailPresenter.swift in Sources */,
+				E2C4B6621EB259070020CAD7 /* SuperHeroesError.swift in Sources */,
 				EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */,
 				EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */,
 				EBDE9B8B1C453E3800E4B4C2 /* SuperHeroesRepository.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Result
 
 class SuperHeroesRepository {
 
@@ -109,10 +110,14 @@ class SuperHeroesRepository {
         }
     }
 
-    func getSuperHero(withName name: String, completion: @escaping (SuperHero?) -> ()) {
+    func getSuperHero(withName name: String, completion: @escaping (Result<SuperHero, SuperHeroesError>) -> ()) {
         delay(1.5) {
-            let superHeroByName = self.superHeroes.filter { $0.name == name }.first
-            completion(superHeroByName)
+            guard let superHeroByName = self.superHeroes.filter({ $0.name == name }).first else {
+                completion(Result(error: .itemNotFound))
+                return
+            }
+            
+            completion(Result(value: superHeroByName))
         }
     }
 
